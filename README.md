@@ -1,5 +1,5 @@
 
-README for the sulcal pits analysis performed in
+Repository containing the code of the sulcal pits analysis performed in
 Le Guen et al,
 Genetic Influence on the Sulcal Pits: On the Origin of the First Cortical Folds
 Cerebral Cortex, https://doi.org/10.1093/cercor/bhx098
