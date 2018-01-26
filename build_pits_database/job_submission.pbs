@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -l nodes=1:ppn=NcoreUSED
+#PBS -l walltime=10:00:00
+#PBS -q QueueNAME
+#PBS -N SulcalPits
+#PBS -t 0-NbJobs
+
+export DIR_SCRIPTS=
+python $DIR_SCRIPTS/cingular_projection.py -a ${PBS_ARRAYID} -j 1
+python $DIR_SCRIPTS/sulcal_pits_detection.py -a ${PBS_ARRAYID} -j 1
+python $DIR_SCRIPTS/tex_pits_smoothing.py -a ${PBS_ARRAYID} -j 1
+python $DIR_SCRIPTS/geodesic_depth_map.py -a ${PBS_ARRAYID} -j 1
+python $DIR_SCRIPTS/project_to_template.py -a ${PBS_ARRAYID} -j 1
+python $DIR_SCRIPTS/pits_density.py
+python $DIR_SCRIPTS/group_watershed.py
